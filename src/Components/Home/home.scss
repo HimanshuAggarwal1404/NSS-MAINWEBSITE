@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
 
 
-.ucollection{
+.ucollection {
   font-size: 1.7rem;
   margin-top: 0.8rem;
   margin-bottom: 0.4rem;
@@ -30,9 +30,9 @@ option {
   margin-bottom: 4rem;
   margin-top: 4.5rem;
 
-  .react-reveal{
-      animation-duration: 1700ms !important;
-    }
+  .react-reveal {
+    animation-duration: 1700ms !important;
+  }
 
   .homeFlexBox {
     display: flex;
@@ -49,6 +49,7 @@ option {
       display: none;
       margin-top: 2rem;
       cursor: pointer;
+
       .button {
         display: block;
         color: white;
@@ -70,6 +71,7 @@ option {
       .homeRight_mob {
         width: 100%;
         display: none;
+
         .homeimg {
           justify-content: center;
           margin-bottom: 2rem;
@@ -81,6 +83,7 @@ option {
         display: flex;
         margin-top: 2rem;
         cursor: pointer;
+
         .button {
           display: block;
           color: white;
@@ -96,6 +99,7 @@ option {
 
     .homeRight {
       width: 50%;
+
       .homeimg {
         display: flex;
         justify-content: flex-end;
@@ -110,9 +114,9 @@ option {
   margin: 0 auto;
   margin-top: 5rem;
 
-  .react-reveal{
-      animation-duration: 1700ms !important;
-    }
+  .react-reveal {
+    animation-duration: 1700ms !important;
+  }
 
   img {
     max-width: 100%;
@@ -139,6 +143,7 @@ option {
 
       .left_mob {
         display: none;
+
         .homeimg {
           display: flex;
           justify-content: flex-start;
@@ -147,6 +152,7 @@ option {
 
       .left {
         width: 100%;
+
         .homeimg {
           display: flex;
           justify-content: flex-start;
@@ -169,6 +175,7 @@ option {
 
       .rightB_mob {
         display: none;
+
         .homeimg {
           display: flex;
           justify-content: flex-start;
@@ -177,6 +184,7 @@ option {
 
       .rightB {
         width: 100%;
+
         .homeimg {
           display: flex;
           justify-content: flex-end;
@@ -193,9 +201,9 @@ option {
   margin-bottom: 3rem;
   margin-top: 7rem;
 
-  .react-reveal{
-      animation-duration: 750ms !important;
-    }
+  .react-reveal {
+    animation-duration: 750ms !important;
+  }
 
   .homeCarousel1,
   .homeCarousel2 {
@@ -219,6 +227,7 @@ option {
     justify-content: center;
     margin-top: 3rem;
     cursor: pointer;
+
     .button {
       display: block;
       color: white;
@@ -240,9 +249,9 @@ option {
   margin: 0 auto;
   margin-top: 6rem;
 
-  .react-reveal{
-      animation-duration: 1700ms !important;
-    }
+  .react-reveal {
+    animation-duration: 1700ms !important;
+  }
 
   .cards {
     display: grid;
@@ -265,42 +274,61 @@ option {
     display: none;
   }
 }
+
 @media all and (min-width: 1050px) {
-  .rightaboutFlexBox{
+  .rightaboutFlexBox {
     width: 50%;
   }
-  .leftaboutFlexBox{
+
+  .leftaboutFlexBox {
     width: 50%;
   }
 }
-
+.Carouselcontainer{
+width: 100vw;
+display: flex;
+justify-content: center;
+}
+.CarouselHero {
+  max-height: 100vh;
+  max-width: 50vw;
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+}
 @media all and (max-width: 1050px) {
   .homeimg {
     margin-top: 2rem !important;
   }
 
-  .mainInfo{
-    .react-reveal{
+  .mainInfo {
+    .react-reveal {
       animation-duration: 1200ms !important;
     }
   }
 
+
+
   .homeAbout {
 
-    .react-reveal{
+    .react-reveal {
       animation-duration: 1200ms !important;
     }
+
 
     .aboutFlexBox {
       .left {
         display: none;
       }
-      .rightaboutFlexBox{
+
+      .rightaboutFlexBox {
         width: 100%;
       }
-      .leftaboutFlexBox{
+
+      .leftaboutFlexBox {
         width: 100%;
       }
+
       .left_mob {
         display: block !important;
       }
@@ -322,9 +350,10 @@ option {
 
   .departments {
 
-    .react-reveal{
+    .react-reveal {
       animation-duration: 1200ms !important;
     }
+
     .cards {
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
@@ -332,6 +361,7 @@ option {
 
   .initiatives {
     width: 85%;
+
     .homeCarousel2 {
       display: block !important;
     }
@@ -340,6 +370,7 @@ option {
     .cards_desk {
       display: none;
     }
+
     .cards {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
@@ -375,8 +406,10 @@ option {
           display: none;
         }
       }
+
       .homeRight_mob {
         display: block !important;
+
         .homeimg {
           justify-content: center;
         }
@@ -397,6 +430,7 @@ option {
   .homeAbout {
     .aboutInfo {
       flex-direction: column;
+
       .aboutFlexBox {
         flex-direction: column;
 
@@ -437,7 +471,7 @@ option {
 }
 
 @media all and (max-width: 800px) {
-  .ucollection{
+  .ucollection {
     font-size: 1.4rem;
     margin-bottom: 0;
   }
