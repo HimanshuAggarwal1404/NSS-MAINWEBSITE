@@ -342,11 +342,11 @@ const Aboutus = () => {
           </div>
 
           <div className="mobCardsab">
-          <motion.div
+          {/* <motion.div
           initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
           animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
           transition={{ duration: 1 }} // Duration of the animation in seconds
-        >
+        > */}
               {profs.map((coord) => (
                 <ProfileCard
                   bits="assets/bits_logo.png"
@@ -357,7 +357,7 @@ const Aboutus = () => {
                   linkedin={coord.bitsprofile}
                 />
               ))}
-                </motion.div>
+                {/* </motion.div> */}
           </div>
         </motion.div>
 
@@ -397,11 +397,11 @@ const Aboutus = () => {
           ))}
         </div>
         <div className="mobCardsab">
-        <motion.div
+        {/* <motion.div
         initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
         animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
         transition={{ duration: 1 }} // Duration of the animation in seconds
-      >
+      > */}
             {coords.map((coord) => (
               <ProfileCard
                 imgPath="ProfilePic.png"
@@ -411,7 +411,7 @@ const Aboutus = () => {
                 linkedin={coord.linkedin}
               />
             ))}
-            </motion.div>
+            {/* </motion.div> */}
         </div>
       </div>
 
