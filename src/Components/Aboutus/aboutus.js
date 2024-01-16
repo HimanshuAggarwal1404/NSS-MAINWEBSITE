@@ -4,12 +4,18 @@ import ProfileCard from "./ProfileCard/ProfileCard";
 import ShowMoreText from "react-show-more-text";
 import { motion } from "framer-motion";
 //import Developers from '../Developers/Developers';
-
+import { useInView } from "react-intersection-observer";
 import { useSelector } from "react-redux";
 
 import Footer from "../Footer/footer";
-
+const variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
 const Aboutus = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Change to false if you want it to trigger again whenever it comes in view
+  });
   const coords = useSelector((state) => state.coords);
   const profs = useSelector((state) => state.profs);
   //console.log(profs);
@@ -252,7 +258,7 @@ const Aboutus = () => {
                     of social/community service. Spreading happiness through
                     community service has been one of the primary objectives of
                     NSS. With innovative activities across the departments
-                    catering to all classes of the campus residents, we try to
+                    catering to all aclasses of the campus residents, we try to
                     create small, happy and memorable moments in their lives. We
                     aim to bring about a positive change in society with a focus
                     on Education, Health and overall development.
@@ -281,8 +287,12 @@ const Aboutus = () => {
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0 }} // Initial state (hidden)
-          animate={{ opacity: 1 }} // Final state (visible)
+          ref={ref}
+          variants={variants}
+          initial="hidden"
+          // initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
+          // animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
+          animate={inView ? "show" : "hidden"}
           transition={{ duration: 1 }} // Duration of the animation in seconds
         >
           <div
@@ -308,11 +318,15 @@ const Aboutus = () => {
             />
           </div>
           <div className="mobCardsab">
-          <motion.div
-          initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
-          animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
-          transition={{ duration: 1 }} // Duration of the animation in seconds
-        >
+            <motion.div
+              ref={ref}
+              variants={variants}
+              initial="hidden"
+              // initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
+              // animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
+              animate={inView ? "show" : "hidden"}
+              transition={{ duration: 1 }} // Duration of the animation in seconds
+            >
               <ProfileCard
                 imgPath="ProfilePic.png"
                 designation="Faculty Coordinator"
@@ -320,7 +334,7 @@ const Aboutus = () => {
                 personName="Prof. Ashish Tiwari"
                 bits="assets/bits_logo.png"
               />
-                </motion.div>
+            </motion.div>
           </div>
 
           <div className={`${classes.team_heading} team_heading`}>
@@ -342,22 +356,17 @@ const Aboutus = () => {
           </div>
 
           <div className="mobCardsab">
-          {/* <motion.div
-          initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
-          animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
-          transition={{ duration: 1 }} // Duration of the animation in seconds
-        > */}
-              {profs.map((coord) => (
-                <ProfileCard
-                  bits="assets/bits_logo.png"
-                  imgPath="ProfilePic.png"
-                  imgurl={coord.imgurl}
-                  designation={coord.designation}
-                  personName={coord.name}
-                  linkedin={coord.bitsprofile}
-                />
-              ))}
-                {/* </motion.div> */}
+           
+            {profs.map((coord) => (
+              <ProfileCard
+                bits="assets/bits_logo.png"
+                imgPath="ProfilePic.png"
+                imgurl={coord.imgurl}
+                designation={coord.designation}
+                personName={coord.name}
+                linkedin={coord.bitsprofile}
+              />
+            ))}
           </div>
         </motion.div>
 
@@ -397,31 +406,31 @@ const Aboutus = () => {
           ))}
         </div>
         <div className="mobCardsab">
-        {/* <motion.div
+          {/* <motion.div
         initial={{ x: '-100vw' }} // Initial position (outside of the viewport on the left)
         animate={{ x: 0 }} // Final position (x: 0 means no horizontal translation)
         transition={{ duration: 1 }} // Duration of the animation in seconds
       > */}
-            {coords.map((coord) => (
-              <ProfileCard
-                imgPath="ProfilePic.png"
-                imgurl={coord.imgurl}
-                designation={coord.designation}
-                personName={coord.name}
-                linkedin={coord.linkedin}
-              />
-            ))}
-            {/* </motion.div> */}
+          {coords.map((coord) => (
+            <ProfileCard
+              imgPath="ProfilePic.png"
+              imgurl={coord.imgurl}
+              designation={coord.designation}
+              personName={coord.name}
+              linkedin={coord.linkedin}
+            />
+          ))}
+          {/* </motion.div> */}
         </div>
       </div>
 
       <motion.div
-      initial={{ opacity: 0 }} // Initial state (hidden)
-      animate={{ opacity: 1 }} // Final state (visible)
-      transition={{ duration: 1 }} // Duration of the animation in seconds
-    >
+        initial={{ opacity: 0 }} // Initial state (hidden)
+        animate={{ opacity: 1 }} // Final state (visible)
+        transition={{ duration: 1 }} // Duration of the animation in seconds
+      >
         <Footer></Footer>
-        </motion.div>
+      </motion.div>
     </React.Fragment>
   );
 };
